@@ -2,7 +2,16 @@
 
 namespace App\Validation\Rules;
 
-class Email
+use App\Validation\Validators\EmailValidator;
+use App\Validation\Validators\ValidatorInterface;
+use Attribute;
+
+#[Attribute]
+class Email implements ValidationRuleInterface
 {
 
+    public function getValidator(): ValidatorInterface
+    {
+        return new EmailValidator();
+    }
 }

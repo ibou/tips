@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Validation\Validators;
 
-class ValidatorInterface
+interface ValidatorInterface
 {
 
+    public function validate($value): bool;
 }
